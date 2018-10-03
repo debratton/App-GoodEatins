@@ -93,14 +93,14 @@
                                     <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="kOr-dc-dja" customClass="RecipeCell" customModule="GoodEatins" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RecipeCell" id="kOr-dc-dja" customClass="RecipeCell" customModule="GoodEatins" customModuleProvider="target">
                                         <rect key="frame" x="10" y="10" width="150" height="150"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VJs-NR-s4f">
+                                                <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="burger0" translatesAutoresizingMaskIntoConstraints="NO" id="VJs-NR-s4f">
                                                     <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                                 </imageView>
                                             </subviews>
@@ -130,11 +130,62 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="thx-qI-xLA" id="0Qv-Ih-Ykl"/>
+                        <segue destination="Ouu-Qh-VSo" kind="show" identifier="toRecipeDetails" id="7H3-22-EAy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AQa-1V-c3h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1666.4000000000001" y="-403.44827586206901"/>
+            <point key="canvasLocation" x="-1622" y="-404"/>
+        </scene>
+        <!--Recipe DetailVC-->
+        <scene sceneID="3w2-lI-aEw">
+            <objects>
+                <viewController id="Ouu-Qh-VSo" customClass="RecipeDetailVC" customModule="GoodEatins" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bzA-gF-h9W">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="burger0" translatesAutoresizingMaskIntoConstraints="NO" id="noM-3C-vLM">
+                                <rect key="frame" x="0.0" y="64" width="375" height="225"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="225" id="nuf-OT-fZM"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Burger and Fries" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uiz-W8-3KO">
+                                <rect key="frame" x="105" y="323" width="165" height="29"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="22"/>
+                                <color key="textColor" red="0.2534039334" green="0.2534039334" blue="0.2534039334" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2X-NY-oWM">
+                                <rect key="frame" x="20" y="370" width="335" height="22.5"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="k7Y-yp-jJA" firstAttribute="trailing" secondItem="g2X-NY-oWM" secondAttribute="trailing" constant="20" id="Ezi-bN-lN8"/>
+                            <constraint firstItem="noM-3C-vLM" firstAttribute="leading" secondItem="k7Y-yp-jJA" secondAttribute="leading" id="JVI-1b-Z16"/>
+                            <constraint firstItem="noM-3C-vLM" firstAttribute="trailing" secondItem="k7Y-yp-jJA" secondAttribute="trailing" id="NhG-Xu-FHc"/>
+                            <constraint firstItem="noM-3C-vLM" firstAttribute="top" secondItem="k7Y-yp-jJA" secondAttribute="top" id="bWJ-mw-JPO"/>
+                            <constraint firstItem="Uiz-W8-3KO" firstAttribute="centerX" secondItem="bzA-gF-h9W" secondAttribute="centerX" id="d2X-yy-PpO"/>
+                            <constraint firstItem="Uiz-W8-3KO" firstAttribute="top" secondItem="noM-3C-vLM" secondAttribute="bottom" constant="34" id="jsX-FY-Bzy"/>
+                            <constraint firstItem="g2X-NY-oWM" firstAttribute="top" secondItem="Uiz-W8-3KO" secondAttribute="bottom" constant="18" id="nza-m7-HEV"/>
+                            <constraint firstItem="g2X-NY-oWM" firstAttribute="leading" secondItem="k7Y-yp-jJA" secondAttribute="leading" constant="20" id="phK-iQ-nyl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="k7Y-yp-jJA"/>
+                    </view>
+                    <connections>
+                        <outlet property="recipeImg" destination="noM-3C-vLM" id="3RB-Ys-wSO"/>
+                        <outlet property="recipeInstructionsTxt" destination="g2X-NY-oWM" id="gXq-fd-M99"/>
+                        <outlet property="recipeTitleTxt" destination="Uiz-W8-3KO" id="2c6-eY-iTg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m3y-sj-McR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-754.39999999999998" y="-403.44827586206901"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HMU-ac-Hrg">
